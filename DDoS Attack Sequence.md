@@ -10,7 +10,7 @@ BotNet -> WebServer: Begin DDoS Attack
 WebServer -> Firewall: Alert of unusual traffic
 
 Note over WebServer: Server struggles with heavy traffic
-Note over Firewall: Anomaly detection activated
+Note over Firewall: Detecting and analyzing anomalies
 
 Firewall -> WebServer: Apply filter to manage traffic 
 Firewall -> BotNet: Send traffic throttling response
