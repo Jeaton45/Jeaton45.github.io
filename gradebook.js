@@ -13,21 +13,21 @@ function fetchGradeData() {
     if(xhr.readystate === xhr.done){
       // Check if we're successful
       if(xhr.status !== 200){
-        consol.error('Could not get grades.
+        console.error('Could not get grades.
           Status: ${xhr.status}');
 }
 // And then call the function to update the HTML with our data
     populateGradebook(JSON.parse(xhr.responsetext));
     }
   }.bind(this);
-  xhr.open('get", apiRoute, true);
+  xhr.open("get", apiRoute, true);
   xhr.send();
 }
 
 function populateGradebook(data) {
   // This function will take the fetched grade data and populate the table
   console.log("Populating gradebook with data:", data);
-  let tableELM = document.getElementById)"gradebook"); // Get the gradebook table element
+  let tableELM = document.getElementById("gradebook"); // Get the gradebook table element
     data.foreach(function(assignment){ // For each row of data we're passed in
       let row = document.createElement("tr"); // create a table row element
       let columns = []; // Handy place to stick the colums of information
@@ -37,7 +37,7 @@ function populateGradebook(data) {
         document.createTextNode(assignment.last_name + ", " + assignment.first_name)
       );
       columns.grade = document.createElement('td'); // second column will be the grade
-      columns.grade.appendchild(
+      columns.grade.appendChild(
         // Just put the name in text, you could be fancy and figure out the letter grade here
         // with either a bunch of conditions, or a JavaScript "switch" statement
         document.createTextNode(assignment.total_grade)
